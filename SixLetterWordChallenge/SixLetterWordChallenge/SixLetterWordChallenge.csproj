@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BL\" />
     <Folder Include="Resources\" />
   </ItemGroup>
 

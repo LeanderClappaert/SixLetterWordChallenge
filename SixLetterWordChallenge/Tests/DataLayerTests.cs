@@ -1,12 +1,13 @@
 using System.IO;
 using NUnit.Framework;
 using SixLetterWordChallenge.DL;
+using SixLetterWordChallenge.IDL;
 
 namespace Tests
 {
     public class DataLayerTests
     {
-        private InputReader _inputReader;
+        private IInputReader _inputReader;
         
         [OneTimeSetUp]
         public void OneTimeSetup()
