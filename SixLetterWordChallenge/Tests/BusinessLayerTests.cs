@@ -17,7 +17,7 @@ namespace Tests
         [Test]
         public void CanFindAllCombinations()
         {
-            var testData = new List<string>
+            var testData = new HashSet<string>
             {
                 "a",
                 "ppels",
@@ -44,14 +44,14 @@ namespace Tests
         [Test]
         public void CanHandleEmptyInputData()
         {
-            var allCombinations = _letterWords.GenerateCombinations(new List<string>());
+            var allCombinations = _letterWords.GenerateCombinations(new HashSet<string>());
             Assert.That(allCombinations.Count, Is.EqualTo(0));
         }
 
         [Test]
         public void CanFindAllCombinationsOfSameWord()
         {
-            var testData = new List<string>
+            var testData = new HashSet<string>
             {
                 "a",
                 "ppels",

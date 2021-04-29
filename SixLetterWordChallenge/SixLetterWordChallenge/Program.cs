@@ -17,7 +17,7 @@ namespace SixLetterWordChallenge
 
                 Console.WriteLine("Reading input.txt...");
                 var inputReader = new InputReader();
-                var inputData = inputReader.ReadFromFile("Resources\\input.txt")?.Split(Environment.NewLine).ToList();
+                var inputData = inputReader.ReadFromFile("Resources\\input.txt")?.Split(Environment.NewLine).ToHashSet();
                 Console.WriteLine("Successfully read input.txt.");
 
                 Console.WriteLine("Calculating combinations...");
