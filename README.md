@@ -26,3 +26,4 @@ Don't spend too much time on this.
 
 - Target Framework: .NET 5.0
 - Works for 2-word combinations, but not for more (yet).
+- You can run this program by cloning the repository and execute SixLetterWordChallenge\ReleaseExe\SixLetterWordChallenge.exe
