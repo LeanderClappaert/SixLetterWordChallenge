@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SixLetterWordChallenge.IBL;
 
 namespace SixLetterWordChallenge.BL
 {
@@ -45,10 +46,5 @@ namespace SixLetterWordChallenge.BL
 
             return resultSet;
         }
-    }
-
-    public interface ILetterWords
-    {
-        Dictionary<string, string> GenerateCombinations(HashSet<string> inputData);
     }
 }

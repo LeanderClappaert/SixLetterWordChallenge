@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using SixLetterWordChallenge.BL;
+using SixLetterWordChallenge.IBL;
 
 namespace Tests
 {
