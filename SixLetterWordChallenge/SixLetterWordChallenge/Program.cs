@@ -29,7 +29,7 @@ namespace SixLetterWordChallenge
                 stopWatch.Stop();
 
                 Console.WriteLine($"Found {allCombinations.Count} combinations in {stopWatch.Elapsed}");
-                foreach (var (sixLetterWord, combination) in allCombinations)
+                foreach (var (combination, sixLetterWord) in allCombinations)
                 {
                     Console.WriteLine($"{combination}={sixLetterWord}");
                 }

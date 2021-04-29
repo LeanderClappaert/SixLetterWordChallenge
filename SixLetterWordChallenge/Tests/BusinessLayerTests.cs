@@ -28,10 +28,10 @@ namespace Tests
             };
             var allCombinations = _letterWords.GenerateCombinations(testData);
             Assert.That(allCombinations.Count, Is.EqualTo(2));
-            Assert.That(allCombinations.ContainsKey("appels"), Is.True);
-            Assert.That(allCombinations.ContainsValue("a+ppels"), Is.True);
-            Assert.That(allCombinations.ContainsKey("bakken"), Is.True);
-            Assert.That(allCombinations.ContainsValue("ba+kken"), Is.True);
+            Assert.That(allCombinations.ContainsValue("appels"), Is.True);
+            Assert.That(allCombinations.ContainsKey("a+ppels"), Is.True);
+            Assert.That(allCombinations.ContainsValue("bakken"), Is.True);
+            Assert.That(allCombinations.ContainsKey("ba+kken"), Is.True);
         }
 
         [Test]
@@ -46,6 +46,32 @@ namespace Tests
         {
             var allCombinations = _letterWords.GenerateCombinations(new List<string>());
             Assert.That(allCombinations.Count, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void CanFindAllCombinationsOfSameWord()
+        {
+            var testData = new List<string>
+            {
+                "a",
+                "ppels",
+                "ba",
+                "kken",
+                "appels",
+                "bakken",
+                "ap",
+                "pels",
+                "bak",
+                "ken"
+            };
+            var allCombinations = _letterWords.GenerateCombinations(testData);
+            Assert.That(allCombinations.Count, Is.EqualTo(4));
+            Assert.That(allCombinations.ContainsValue("appels"), Is.True);
+            Assert.That(allCombinations.ContainsKey("a+ppels"), Is.True);
+            Assert.That(allCombinations.ContainsKey("ap+pels"), Is.True);
+            Assert.That(allCombinations.ContainsValue("bakken"), Is.True);
+            Assert.That(allCombinations.ContainsKey("ba+kken"), Is.True);
+            Assert.That(allCombinations.ContainsKey("bak+ken"), Is.True);
         }
     }
 }

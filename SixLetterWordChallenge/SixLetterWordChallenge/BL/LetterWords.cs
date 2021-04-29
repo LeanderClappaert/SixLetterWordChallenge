@@ -32,12 +32,13 @@ namespace SixLetterWordChallenge.BL
                 foreach (var otherWord in inputData)
                 {
                     if (baseWord.Equals(otherWord, StringComparison.CurrentCultureIgnoreCase)) continue;
+                    var tempCombination = $"{baseWord}+{otherWord}";
                     var tempResult = baseWord + otherWord;
                     if (tempResult.Length == MaxWordLength)
                     {
-                        if (resultSet.ContainsKey(tempResult)) continue;
+                        if (resultSet.ContainsKey(tempCombination)) continue;
                         if (!allSixLetterWords.Contains(tempResult)) continue;
-                        resultSet.Add(tempResult, $"{baseWord}+{otherWord}");
+                        resultSet.Add($"{baseWord}+{otherWord}", tempResult);
                     }
                 }
             }
