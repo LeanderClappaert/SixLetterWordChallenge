@@ -3,9 +3,9 @@ using NUnit.Framework;
 using SixLetterWordChallenge.DL;
 using SixLetterWordChallenge.IDL;
 
-namespace Tests
+namespace Tests.DL
 {
-    public class DataLayerTests
+    public class FileOperationsTests
     {
         private IInputReader _inputReader;
         
