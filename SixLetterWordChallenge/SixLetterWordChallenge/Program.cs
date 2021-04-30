@@ -25,14 +25,16 @@ namespace SixLetterWordChallenge
 
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
-                var allCombinations = letterWords.GenerateCombinations(inputData);
+                var allCombinations = letterWords.Generate2WordCombinations(inputData);
                 stopWatch.Stop();
 
-                Console.WriteLine($"Found {allCombinations.Count} combinations in {stopWatch.Elapsed}");
-                foreach (var (combination, sixLetterWord) in allCombinations)
-                {
-                    Console.WriteLine($"{combination}={sixLetterWord}");
-                }
+                Console.WriteLine($"Found {allCombinations.Count} 2-word combinations in {stopWatch.Elapsed}");
+
+                stopWatch.Reset();
+                stopWatch.Start();
+                var allCombinationsV3 = letterWords.GenerateNWordCombinations(inputData);
+                stopWatch.Stop();
+                Console.WriteLine($"Found {allCombinationsV3.Count} n-word combinations in {stopWatch.Elapsed}");
             }
             catch (FileNotFoundException fnfEx)
             {
