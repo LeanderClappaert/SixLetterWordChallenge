@@ -25,5 +25,16 @@ Don't spend too much time on this.
 # Remarks
 
 - Target Framework: .NET 5.0
-- Works for 2-word combinations, but not for more (yet).
+- Works for 2-word combinations.
 - You can run this program by cloning the repository and execute SixLetterWordChallenge\ReleaseExe\SixLetterWordChallenge.exe
+
+# Update
+- Works for N-word combinations now.
+-- Still have to improve the performance a lot.
+- Updated the release executable, found @ SixLetterWordChallenge\ReleaseExe\SixLetterWordChallenge.exe
+
+# To do
+- Performance! Takes a while to find all N-word combinations (for a 6-letter word).
+-- Takes 20s for 4-letter words (with the current input.txt file) but will take exponentially longer for longer words.
+- More command line configuration, e.g. path to a text file, set the length of the words to be found (currently 6 only, hard-coded).
+- ...
