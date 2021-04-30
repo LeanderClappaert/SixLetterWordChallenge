@@ -30,11 +30,16 @@ Don't spend too much time on this.
 
 # Update
 - Works for N-word combinations now.
--- Still have to improve the performance a lot.
+-- Still have to improve the performance a lot (4-letter word takes about 1m10s).
+- Updated the release executable, found @ SixLetterWordChallenge\ReleaseExe\SixLetterWordChallenge.exe
+
+# Update 2
+- Improved the performance.
+-- Used to take 1m10s for 4-letter words, now it takes 32s.
 - Updated the release executable, found @ SixLetterWordChallenge\ReleaseExe\SixLetterWordChallenge.exe
 
 # To do
 - Performance! Takes a while to find all N-word combinations (for a 6-letter word).
--- Takes 20s for 4-letter words (with the current input.txt file) but will take exponentially longer for longer words.
+-- 5-letter words take about 17m.
 - More command line configuration, e.g. path to a text file, set the length of the words to be found (currently 6 only, hard-coded).
 - ...

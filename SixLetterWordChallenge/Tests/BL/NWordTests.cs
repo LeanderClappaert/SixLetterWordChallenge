@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using SixLetterWordChallenge.BL;
 using SixLetterWordChallenge.IBL;
@@ -18,14 +19,16 @@ namespace Tests.BL
         [Test]
         public void CanHandleNonExistingInputData()
         {
-            var allCombinations = _letterWords.GenerateNWordCombinations(null);
+            var allCombinations = _letterWords.GenerateNWordCombinations(null)?.ToList();
+            Assert.That(allCombinations, Is.Not.Null);
             Assert.That(allCombinations.Count, Is.EqualTo(0));
         }
 
         [Test]
         public void CanHandleEmptyInputData()
         {
-            var allCombinations = _letterWords.GenerateNWordCombinations(new HashSet<string>());
+            var allCombinations = _letterWords.GenerateNWordCombinations(new HashSet<string>())?.ToList();
+            Assert.That(allCombinations, Is.Not.Null);
             Assert.That(allCombinations.Count, Is.EqualTo(0));
         }
 
@@ -44,11 +47,12 @@ namespace Tests.BL
                 "appels",
                 "toolong"
             };
-            var allCombinations = _letterWords.GenerateNWordCombinations(testData);
+            var allCombinations = _letterWords.GenerateNWordCombinations(testData)?.ToList();
+            Assert.That(allCombinations, Is.Not.Null);
             Assert.That(allCombinations.Count, Is.EqualTo(2));
-            Assert.That(allCombinations.ContainsValue("appels"), Is.True);
-            Assert.That(allCombinations.ContainsKey("a+pp+e+l+s"), Is.True);
-            Assert.That(allCombinations.ContainsKey("a+ppels"), Is.True);
+            Assert.That(allCombinations.Any(x => x.NWord.Equals("appels")), Is.True);
+            Assert.That(allCombinations.Any(x => x.Combination.Equals("a+pp+e+l+s")), Is.True);
+            Assert.That(allCombinations.Any(x => x.Combination.Equals("a+ppels")), Is.True);
         }
 
         [Test]
@@ -64,11 +68,12 @@ namespace Tests.BL
                 "s",
                 "appels"
             };
-            var allCombinations = _letterWords.GenerateNWordCombinations(testData);
+            var allCombinations = _letterWords.GenerateNWordCombinations(testData)?.ToList();
+            Assert.That(allCombinations, Is.Not.Null);
             Assert.That(allCombinations.Count, Is.EqualTo(2));
-            Assert.That(allCombinations.ContainsValue("appels"), Is.True);
-            Assert.That(allCombinations.ContainsKey("a+pp+e+l+s"), Is.True);
-            Assert.That(allCombinations.ContainsKey("a+ppels"), Is.True);
+            Assert.That(allCombinations.Any(x => x.NWord.Equals("appels")), Is.True);
+            Assert.That(allCombinations.Any(x => x.Combination.Equals("a+pp+e+l+s")), Is.True);
+            Assert.That(allCombinations.Any(x => x.Combination.Equals("a+ppels")), Is.True);
         }
     }
 }

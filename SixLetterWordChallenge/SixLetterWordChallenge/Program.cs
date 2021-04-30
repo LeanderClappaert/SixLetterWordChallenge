@@ -33,8 +33,16 @@ namespace SixLetterWordChallenge
                 stopWatch.Reset();
                 stopWatch.Start();
                 var allCombinationsV3 = letterWords.GenerateNWordCombinations(inputData);
+
+                var counter = 0;
+                foreach (var wordCombination in allCombinationsV3)
+                {
+                    Console.WriteLine(wordCombination.ToString());
+                    counter++;
+                }
+
                 stopWatch.Stop();
-                Console.WriteLine($"Found {allCombinationsV3.Count} n-word combinations in {stopWatch.Elapsed}");
+                Console.WriteLine($"Found {counter} n-word combinations in {stopWatch.Elapsed}");
             }
             catch (FileNotFoundException fnfEx)
             {
